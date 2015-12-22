@@ -12,13 +12,17 @@ if ($_POST['btnStart']) {
     $lightShow->stop();
 }
 
-//$songs[] = $lightShow->getSongs();
-
+$songs[] = $lightShow->getSongs();
+foreach ($songs as &$value) {
+    echo $value;
+}
 
 ?>
 
 <html>
-    <head></head>
+    <head>
+        <title>Leuchtender Christbaum </title>
+    </head>
 
     <body>
         <h1>Christmas Tree</h1>
@@ -26,10 +30,6 @@ if ($_POST['btnStart']) {
         <form method="post" action="index.php">
             <input type="submit" value="start playlist" name="btnStart" />
             <input type="submit" value="stop playlist" name="btnStop" />
-
-<!--            <input type="button" value="start playlist" name="btnStart" />-->
-<!--            <input type="button" value="start playlist" name="btnStart" />-->
-
         </form>
     </body>
 </html>
