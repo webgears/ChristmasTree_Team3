@@ -23,14 +23,13 @@ if ($_POST['btnStart']) {
     <body>
         <h1>Christmas Tree</h1>
 
-        <form method="post">
-            <input type="button" value="start playlist" name="btnStart" />
-            <input type="button" value="stop playlist" name="btnStop" />
+        <form method="post" action="index.php">
+            <input type="submit" value="start playlist" name="btnStart" />
+            <input type="submit" value="stop playlist" name="btnStop" />
 
-            <input type="button" value="start playlist" name="btnStart" />
-            <input type="button" value="start playlist" name="btnStart" />
+<!--            <input type="button" value="start playlist" name="btnStart" />-->
+<!--            <input type="button" value="start playlist" name="btnStart" />-->
 
         </form>
     </body>
 </html>
-// Todo: Start coding here
