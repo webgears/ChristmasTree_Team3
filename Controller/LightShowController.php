@@ -7,7 +7,9 @@ class LightShowController implements ILightShowController
     const MUSIC_FOLDER = "/home/pi/lightshowpi/music/";
     const PLAYLIST = "/home/pi/lightshowpi/playlist/playlist.txt";
     const CMD_PLAY = "sudo nohup python /home/pi/lightshowpi/py/synchronized_lights.py --file={path}";
-    const CMD_PLAY_LIST = "sudo nohup python /home/pi/lightshowpi/py/synchronized_lights.py --playlist={path}";
+    const CMD_PLAY_ONE_OF_LIST = "sudo nohup python /home/pi/lightshowpi/py/synchronized_lights.py --playlist={path}";
+    const CMD_PLAY_LIST = "sudo start_music_and_lights";
+    const CMD_STOP_LIST = "sudo stop_music_and_lights";
 
     /**
      * Returns an array with all the songs
@@ -60,7 +62,7 @@ class LightShowController implements ILightShowController
      */
     public function playPlaylist()
     {
-        $command = escapeshellcmd(str_replace("{path}", self::PLAYLIST, self::CMD_PLAY_LIST));
+        $command = escapeshellcmd(str_replace("{path}", self::PLAYLIST, self::CMD_PLAY_ONE_OF_LIST));
         exec($command . ' &');
     }
 
